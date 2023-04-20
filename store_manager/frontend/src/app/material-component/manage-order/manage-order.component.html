@@ -1,0 +1,359 @@
+<mat-card class="">
+    <b><span>Manage Order</span></b>
+    <button mat-flat-button color="primary" class="float-right" [disabled]="validateSubmit()" (click)="submitAction()">Create Bill</button>
+</mat-card>
+<hr>
+<mat-card>
+    <b><span>Customer Details</span></b>
+    <form [formGroup]="manageOrderForm">
+        <div fxFlex fxLayout="column">
+            <div fxLayout="row wrap">
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>Name</mat-label>
+                    <input matInput formControlName="name" placeholder="John Doe" required>
+                    <mat-icon matSuffix>person</mat-icon>
+                    <mat-error 
+                        *ngIf="manageOrderForm.controls.name.touched && manageOrderForm.controls.name.invalid">
+                        <span *ngIf="manageOrderForm.controls.name.errors.required">This field is required.</span>
+                        <span *ngIf="manageOrderForm.controls.name.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" type="email" placeholder="name@email.com" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="manageOrderForm.controls.email.touched && manageOrderForm.controls.email.invalid">
+                        <span *ngIf="manageOrderForm.controls.email.errors.required">This field is a required field</span>
+                        <span *ngIf="manageOrderForm.controls.email.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+
+                
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput formControlName="contactNumber" type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="555-555-5555" required>
+                    <mat-icon matSuffix>phone</mat-icon>
+                    <mat-error *ngIf="manageOrderForm.controls.contactNumber.touched && manageOrderForm.controls.contactNumber.invalid">
+                        <span *ngIf="manageOrderForm.controls.contactNumber.errors.required">This field is a required field</span>
+                        <span *ngIf="manageOrderForm.controls.contactNumber.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+
+            </div>
+        </div>
+    </form>
+
+    <form [formGroup]="manageOrderForm">
+        <div fxFlex fxLayout="column">
+            <div fxLayout="row wrap">
+
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>Street Address</mat-label>
+                    <input matInput formControlName="streetAddress" placeholder="1313 Mockingbird Lane" required>
+                    <mat-error *ngIf="manageOrderForm.controls.streetAddress.touched && manageOrderForm.controls.streetAddress.invalid">
+                        <span *ngIf="manageOrderForm.controls.streetAddress.errors.required">This field is a required field</span>
+                        <span *ngIf="manageOrderForm.controls.streetAddress.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName="city" placeholder="Mockingbird Heights" required>
+                    <mat-error *ngIf="manageOrderForm.controls.city.touched && manageOrderForm.controls.city.invalid">
+                        <span *ngIf="manageOrderForm.controls.city.errors.required">This field is a required field</span>
+                        <span *ngIf="manageOrderForm.controls.city.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>State</mat-label>
+                    <mat-select matInput formControlName="state" placeholder="WA" required>
+                        <mat-option value="Alabama">AL</mat-option>
+                        <mat-option value="Alaska">AK</mat-option>
+                        <mat-option value="Arizona">AZ</mat-option>
+                        <mat-option value="Arkansas">AR</mat-option>
+                        <mat-option value="Canal Zone">CZ</mat-option>
+                        <mat-option value="Colorado">CO</mat-option>
+                        <mat-option value="Connecticut">CT</mat-option>
+                        <mat-option value="Delaware">DE</mat-option>
+                        <mat-option value="District of Columbia">DC</mat-option>
+                        <mat-option value="Florida">FL</mat-option>
+                        <mat-option value="Georgia">GA</mat-option>
+                        <mat-option value="Guam">GU</mat-option>
+                        <mat-option value="Hawaii">HI</mat-option>
+                        <mat-option value="Idaho">ID</mat-option>
+                        <mat-option value="Illionis">IL</mat-option>
+                        <mat-option value="Indiana">IN</mat-option>
+                        <mat-option value="Iowa">IA</mat-option>
+                        <mat-option value="Kansas">KS</mat-option>
+                        <mat-option value="Kentucky">KY</mat-option>
+                        <mat-option value="Louisiana">LA</mat-option>
+                        <mat-option value="Maine">MA</mat-option>
+                        <mat-option value="Maryland">MD</mat-option>
+                        <mat-option value="Massachusetts">MA</mat-option>
+                        <mat-option value="Michigan">MI</mat-option>
+                        <mat-option value="Minnesota">MN</mat-option>
+                        <mat-option value="Mississippi">MS</mat-option>
+                        <mat-option value="Missouri">MO</mat-option>
+                        <mat-option value="Montana">MT</mat-option>
+                        <mat-option value="Nebraska">NE</mat-option>
+                        <mat-option value="Nevada">NV</mat-option>
+                        <mat-option value="New Hampshire">NH</mat-option>
+                        <mat-option value="New Jersey">NJ</mat-option>
+                        <mat-option value="New Mexico">NM</mat-option>
+                        <mat-option value="New York">NY</mat-option>
+                        <mat-option value="North Carolina">NC</mat-option>
+                        <mat-option value="North Dakota">ND</mat-option>
+                        <mat-option value="Ohio">OH</mat-option>
+                        <mat-option value="Oklahoma">OK</mat-option>
+                        <mat-option value="Oregon">OR</mat-option>
+                        <mat-option value="Pennsylvania">PA</mat-option>
+                        <mat-option value="Puerto Rico">PR</mat-option>
+                        <mat-option value="Rhode Island">RI</mat-option>
+                        <mat-option value="South Carolina">SC</mat-option>
+                        <mat-option value="South Dakota">SD</mat-option>
+                        <mat-option value="Tennessee">TN</mat-option>
+                        <mat-option value="Texas">TX</mat-option>
+                        <mat-option value="Utah">UT</mat-option>
+                        <mat-option value="Vermont">VT</mat-option>
+                        <mat-option value="Virgin Islands">VI</mat-option>
+                        <mat-option value="Virginia">VA</mat-option>
+                        <mat-option value="Washington">WA</mat-option>
+                        <mat-option value="West Virginia">WV</mat-option>
+                        <mat-option value="Wisconsin">WI</mat-option>
+                        <mat-option value="Wyoming">WY</mat-option>
+                        </mat-select>
+                    <mat-error *ngIf="manageOrderForm.controls.state.touched && manageOrderForm.controls.state.invalid">
+                        <span *ngIf="manageOrderForm.controls.state.errors.required">This field is a required field</span>
+                        <span *ngIf="manageOrderForm.controls.state.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="input" appearance="fill" fxFlex>
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput formControlName="zipCode" placeholder="81205" required>
+                    <mat-error *ngIf="manageOrderForm.controls.zipCode.touched && manageOrderForm.controls.zipCode.invalid">
+                        <span *ngIf="manageOrderForm.controls.zipCode.errors.required">This field is a required field</span>
+                        <span *ngIf="manageOrderForm.controls.zipCode.errors.pattern">This field is invalid.</span>
+                    </mat-error>
+                </mat-form-field> 
+
+                <form [formGroup]="manageOrderForm">
+                    <div fxFlex fxLayout="column">
+                      <div fxLayout="row wrap">
+                  
+                        <mat-form-field class="input" appearance="fill" fxFlex>
+                          <mat-label>Payment Method</mat-label>
+                          <mat-icon matSuffix>payment</mat-icon>
+                          <mat-select matInput formControlName="paymentMethod" placeholder="Cash" required>
+                            <mat-option value="Cash">Cash</mat-option>
+                            <mat-option value="Credit Card">Credit Card</mat-option>
+                            <mat-option value="Debit Card">Debit Card</mat-option>
+                            <mat-option value="Check">Check</mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="manageOrderForm.controls.paymentMethod.touched && manageOrderForm.controls.paymentMethod.invalid">
+                            <span *ngIf="manageOrderForm.controls.paymentMethod.errors.required">This field is a required field</span>
+                            <span *ngIf="manageOrderForm.controls.paymentMethod.errors.pattern">This field is invalid.</span>
+                          </mat-error>
+                        </mat-form-field>
+                  
+                        <div *ngIf="manageOrderForm.controls.paymentMethod.value === 'Credit Card'">
+                          <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>Credit Card Number</mat-label>
+                            <input matInput formControlName="cardNumber" required>
+                            <mat-error *ngIf="manageOrderForm.controls.cardNumber.touched && manageOrderForm.controls.cardNumber.invalid">
+                              <span *ngIf="manageOrderForm.controls.cardNumber.errors.required">This field is a required field</span>
+                              <span *ngIf="manageOrderForm.controls.cardNumber.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                          </mat-form-field>
+                  
+                          <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>Expiration Date</mat-label>
+                            <input matInput formControlName="expirationDate" placeholder="MM / YY" required>
+                            <mat-error *ngIf="manageOrderForm.controls.expirationDate.touched && manageOrderForm.controls.expirationDate.invalid">
+                              <span *ngIf="manageOrderForm.controls.expirationDate.errors.required">This field is a required field</span>
+                              <span *ngIf="manageOrderForm.controls.expirationDate.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                          </mat-form-field>
+                  
+                          <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>CVV</mat-label>
+                            <input matInput formControlName="cvv" required>
+                            <mat-error *ngIf="manageOrderForm.controls.cvv.touched && manageOrderForm.controls.cvv.invalid">
+                              <span *ngIf="manageOrderForm.controls.cvv.errors.required">This field is a required field</span>
+                              <span *ngIf="manageOrderForm.controls.cvv.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                          </mat-form-field>
+                        </div>
+
+                        <div *ngIf="manageOrderForm.controls.paymentMethod.value === 'Debit Card'">
+                            <mat-form-field appearance="fill" fxFlex>
+                              <mat-label>Credit Card Number</mat-label>
+                              <input matInput formControlName="cardNumber" required>
+                              <mat-error *ngIf="manageOrderForm.controls.cardNumber.touched && manageOrderForm.controls.cardNumber.invalid">
+                                <span *ngIf="manageOrderForm.controls.cardNumber.errors.required">This field is a required field</span>
+                                <span *ngIf="manageOrderForm.controls.cardNumber.errors.pattern">This field is invalid.</span>
+                              </mat-error>
+                            </mat-form-field>
+                    
+                            <mat-form-field appearance="fill" fxFlex>
+                              <mat-label>Expiration Date</mat-label>
+                              <input matInput formControlName="expirationDate" placeholder="MM / YY" required>
+                              <mat-error *ngIf="manageOrderForm.controls.expirationDate.touched && manageOrderForm.controls.expirationDate.invalid">
+                                <span *ngIf="manageOrderForm.controls.expirationDate.errors.required">This field is a required field</span>
+                                <span *ngIf="manageOrderForm.controls.expirationDate.errors.pattern">This field is invalid.</span>
+                              </mat-error>
+                            </mat-form-field>
+                    
+                            <mat-form-field appearance="fill" fxFlex>
+                              <mat-label>CVV</mat-label>
+                              <input matInput formControlName="cvv" required>
+                              <mat-error *ngIf="manageOrderForm.controls.cvv.touched && manageOrderForm.controls.cvv.invalid">
+                                <span *ngIf="manageOrderForm.controls.cvv.errors.required">This field is a required field</span>
+                                <span *ngIf="manageOrderForm.controls.cvv.errors.pattern">This field is invalid.</span>
+                              </mat-error>
+                            </mat-form-field>
+                          </div>
+
+                          <div *ngIf="manageOrderForm.controls.paymentMethod.value === 'Check'">
+                            <mat-form-field appearance="fill" fxFlex>
+                              <mat-label>Account Number</mat-label>
+                              <input matInput formControlName="accountNumber" required>
+                              <mat-error *ngIf="manageOrderForm.controls.accountNumber.touched && manageOrderForm.controls.accountNumber.invalid">
+                                <span *ngIf="manageOrderForm.controls.accountNumber.errors.required">This field is a required field</span>
+                                <span *ngIf="manageOrderForm.controls.accountNumber.errors.pattern">This field is invalid.</span>
+                              </mat-error>
+                            </mat-form-field>
+                    
+                            <mat-form-field appearance="fill" fxFlex>
+                              <mat-label>Routing Number</mat-label>
+                              <input matInput formControlName="routingNumber"  required>
+                              <mat-error *ngIf="manageOrderForm.controls.routingNumber.touched && manageOrderForm.controls.routingNumber.invalid">
+                                <span *ngIf="manageOrderForm.controls.routingNumber.errors.required">This field is a required field</span>
+                                <span *ngIf="manageOrderForm.controls.routingNumber.errors.pattern">This field is invalid.</span>
+                              </mat-error>
+                            </mat-form-field>
+                          </div>
+                      </div>
+                    </div>
+                  </form>
+           </div>
+        </div>
+    </form>
+</mat-card>
+
+<hr>
+
+<mat-card>
+<b><span>Select Product</span></b>
+<form [formGroup] = "manageOrderForm">
+    <div fxFlex fxLayout="column">
+        <div fxLayout="row wrap">
+
+            <mat-form-field class="input" appearance="fill" fxFlex>
+                <mat-label>Category</mat-label>
+                <mat-select formControlName="category" (selectionChange)="getProductsByCategory($event.value)">
+                    <mat-option *ngFor="let category of categories" [value]="category">{{category.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="input" apperance="fill" fxFlex>
+                <mat-label>Product</mat-label>
+                <mat-select formControlName="product" (selectionChange)="getProductDetails($event.value)">
+                    <mat-option *ngFor="let product of products" [value]="product">{{product.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="input" appearance="fill" fxFlex>
+                <mat-label>Price</mat-label>
+                <input matInput formControlName=price required readonly
+  type="text" placeholder="$0.00"
+  value="{{ manageOrderForm.controls.price.value | currency:'USD':'symbol':'1.2-2' }}">
+                <mat-error *ngIf="manageOrderForm.controls.price.touched && manageOrderForm.controls.price.invalid">
+                    <span *ngIf="manageOrderForm.controls.price.errors.required">This field is a required field</span>
+                    <span *ngIf="manageOrderForm.controls.price.errors.patter">This field is a required invalid.</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input" appearance="fill" fxFlex>
+                <mat-label>Quantity</mat-label>
+                <input matInput formControlName=quantity required (keyup)="setQuantity($event)" #input>
+                <mat-error *ngIf="manageOrderForm.controls.quantity.touched && manageOrderForm.controls.quantity.invalid">
+                    <span *ngIf="manageOrderForm.controls.quantity.errors.required">This field is a required field</span>
+                    <span *ngIf="manageOrderForm.controls.quantity.errors.patter">This field is a required invalid.</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="input" appearance="fill" fxFlex>
+                <mat-label>Total</mat-label>
+                <input matInput formControlName=total required readonly
+  type="text" placeholder="$0.00"
+  value="{{ manageOrderForm.controls.total.value | currency:'USD':'symbol':'1.2-2'}}">
+                <mat-error *ngIf="manageOrderForm.controls.total.touched && manageOrderForm.controls.total.invalid">
+                    <span *ngIf="manageOrderForm.controls.total.errors.required">This field is a required field</span>
+                    <span *ngIf="manageOrderForm.controls.total.errors.patter">This field is a required invalid.</span>
+                </mat-error>
+            </mat-form-field>
+
+            
+        </div>
+    </div>
+</form>
+
+<div>
+    <button mat-flat-button color="primary" [disabled]="validateProductAdd()" (click)="add()">Add</button>
+    <button mat-flat-button color="primary" class="float-right">Total Amount: ${{total}}</button>
+</div>
+</mat-card>
+<hr>
+
+
+<div class="responsive_table">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef>Name</th>
+            <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="category">
+            <th mat-header-cell *matHeaderCellDef>Category</th>
+            <td mat-cell *matCellDef="let element">{{element.category}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="product">
+            <th mat-header-cell *matHeaderCellDef>Product</th>
+            <td mat-cell *matCellDef="let element">{{element.product}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let element">{{element.price | currency:'USD':'symbol':'1.2-2'}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef>Quantity</th>
+            <td mat-cell *matCellDef="let element">{{element.quantity}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Total</th>
+            <td mat-cell *matCellDef="let element">{{element.total | currency:'USD':'symbol':'1.2-2'}}</td>
+        </ng-container>
+
+       <ng-container matColumnDef="delete">
+            <th mat-header-cell *matHeaderCellDef>Delete</th>
+            <td mat-cell *matCellDef="let element; let i = index" class= "action-link">
+                <button mat-flat-button color="primary" matTooltip="Delete" (click)="handleDeleteAction(i,element)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+        </td>
+        </ng-container>
+
+       <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky:true"></tr>
+       <tr mat-row *matRowDef="let row;columns:displayedColumns"></tr> 
+        
+    </table>
+</div>
+
+

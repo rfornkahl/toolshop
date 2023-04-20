@@ -1,0 +1,26 @@
+.link {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+  font-weight: 600;
+  letter-spacing: .25ch;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 15px;
+  }
+  
+  .link:hover {
+    color: grayscale($color: #c02929);
+    text-shadow:
+    0 0 42px rgb(141, 27, 18),
+    0 0 82px rgb(168, 24, 24),
+    0 0 92px rgb(180, 20, 20),
+    0 0 102px rgb(190, 33, 33),
+    0 0 151px rgb(233, 7, 7);
+
+  }
+

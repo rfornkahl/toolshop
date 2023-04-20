@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row fxLayout="row">
+        <span class="title-center">Contact Us</span>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="contactForm">
+        <div fxFlex fxLayout="column">
+
+                    <mat-form-field appearance="fill" fxFlex>
+                        <mat-label>First Name</mat-label>
+                        <input matInput formControlName="firstName" type="text" placeholder="John" required>
+                        <mat-error *ngIf="contactForm.controls.firstName.touched && contactForm.controls.firstName.invalid">
+                            <span *ngIf="contactForm.controls.firstName.errors.required">This field is required.</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill" fxFlex>
+                        <mat-label>Last Name</mat-label>
+                        <input matInput formControlName="lastName" type="text" placeholder="Doe" required>
+                        <mat-error *ngIf="contactForm.controls.lastName.touched && contactForm.controls.lastName.invalid">
+                            <span *ngIf="contactForm.controls.lastName.errors.required">This field is required.</span>
+                        </mat-error>
+                    </mat-form-field>
+
+                        <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>Phone Number</mat-label>
+                            <input matInput formControlName="phone" type="text" placeholder="555-555-5555" required>
+                            <mat-error *ngIf="contactForm.controls.phone.touched && contactForm.controls.phone.invalid">
+                                <span *ngIf="contactForm.controls.phone.errors.required">This field is required.</span>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>Email</mat-label>
+                            <input matInput formControlName="email" type="email" placeholder="email@email.com" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z0-9.-_]{2,}[.]{1}[a-zA-Z]{2,}" required>
+                            <mat-error *ngIf="contactForm.controls.email.touched && contactForm.controls.email.invalid">
+                                <span *ngIf="contactForm.controls.email.errors.required">This field is required.</span>
+                                <span *ngIf="contactForm.controls.email.errors.pattern">This field is invalid.</span>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>Summary</mat-label>
+                            <input matInput formControlName="summary" placeholder="Tell me about the Tool Shop" required>
+                            <mat-error *ngIf="contactForm.controls.summary.touched && contactForm.controls.summary.invalid">
+                                <span *ngIf="contactForm.controls.summary.errors.required">This field is required.</span>
+                            </mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field appearance="fill" fxFlex>
+                            <mat-label>Detailed Description</mat-label>
+                            <textarea matInput formControlName="details" placeholder="What does the Tool Shop provide?" required></textarea>
+                            <mat-error *ngIf="contactForm.controls.details.touched && contactForm.controls.details.invalid">
+                                <span *ngIf="contactForm.controls.details.errors.required">This field is required.</span>
+                            </mat-error>
+                        </mat-form-field>
+
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]="contactForm.invalid">Submit</button>
+    <button mat-raised-button color="primary" mat-dialog-close>Close</button>
+</mat-dialog-actions>

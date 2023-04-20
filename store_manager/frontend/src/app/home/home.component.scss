@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,400;1,800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+/* Style the top navigation bar */
+.navbar, .footbar {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  text-align: center;
+  background-color: transparent;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  color: #fff;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #2b2626,
+  0 0 21px #413939,
+  0 0 42px rgb(148, 71, 48),
+  0 0 82px rgb(190, 78, 26),
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa;
+  font-weight: 600;
+  letter-spacing: .25ch;
+  padding: 5px 10px;
+
+
+}
+
+// // /* Change color on hover */
+.navbar a:hover {
+  color: rgb(192, 96, 96);
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(66, 26, 23),
+    0 0 82px rgb(168, 24, 24),
+    0 0 92px rgb(180, 20, 20),
+    0 0 102px rgb(190, 33, 33),
+    0 0 151px rgb(233, 7, 7);
+}
+
+.footbar a {
+  color: white;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #2b2626,
+    0 0 21px #413939,
+    0 0 42px rgb(148, 71, 48),
+    0 0 82px rgb(190, 78, 26),
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
+  font-weight: 600;
+  letter-spacing: .25ch;
+  padding: 5px 10px;
+}
+
+.footbar a:hover {
+  color: rgb(192, 96, 96);
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(66, 26, 23),
+    0 0 82px rgb(168, 24, 24),
+    0 0 92px rgb(180, 20, 20),
+    0 0 102px rgb(190, 33, 33),
+    0 0 151px rgb(233, 7, 7);
+}
+
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .navbar, .footbar {   
+    flex-direction: column;
+  }
+}
+
+
+
+/* On screens that are 992px wide or less, go from four columns to two columns */
+@media screen and (max-width: 992px) {
+  .navbar, .footbar {
+    flex: 50%;
+  }
+}
+
+
+
+.wrapper {
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+a.logo {
+  margin-right: auto;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  margin: 0px;
+  padding: 5px;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  font-size: 1.25em;
+  cursor: pointer;
+
+}
+
+a:active{
+  color:purple;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(141, 27, 18),
+    0 0 82px rgb(168, 24, 24),
+    0 0 92px rgb(180, 20, 20),
+    0 0 102px rgb(190, 33, 33),
+    0 0 151px rgb(233, 7, 7);
+}
+
+
+
+
+@media (max-width: 1024px) {
+  .wrapper {
+    height: auto;
+  }
+  
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  a.logo {
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-right: 0px;
+  }
+  
+  ul {
+    width: 100%;
+    margin-bottom: 1em;
+    justify-content: space-between;
+  }
+  
+  ul li a {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  a.logo {
+    margin: 1.5em;
+  }
+  
+  ul {
+    flex-direction: column;
+  }
+  
+  ul li {
+    margin: 0.3em;
+    text-align: center;
+  }
+  
+  ul li a {
+    margin-left: 0px;
+  }
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+}
+
+.mat-icon {
+  vertical-align: middle;
+}
+
+
+.fade-in1 {
+  color: #fff;
+  text-shadow:
+  0 0 7px #fff,
+  0 0 10px #2b2626,
+  0 0 21px #413939,
+  0 0 42px rgb(148, 71, 48),
+  0 0 82px rgb(190, 78, 26),
+  0 0 92px #0fa,
+  0 0 102px #0fa,
+  0 0 151px #0fa;
+  letter-spacing: .25ch;
+  font-size: 3.5rem;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  width: 55%;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 10s ease-in-out forwards;
+  cursor: pointer;
+}
+
+.fade-in1:hover {
+  color: white;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(141, 27, 18),
+    0 0 82px rgb(168, 24, 24),
+    0 0 92px rgb(180, 20, 20),
+    0 0 102px rgb(190, 33, 33),
+    0 0 151px rgb(233, 7, 7);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// @keyframes fadeOut {
+//   0% {
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+//   50% {
+//     opacity: 1;
+//     visibility: visible;
+//   }
+//   100% {
+//     opacity: 0;
+//     visibility: hidden;
+//   }
+// }
+
+
+
+/* Style the body */
+body {
+  background-image: url("../../assets/img/photos/toolbackground.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: transparent;
+}
+
+.footbar {
+  background-color: rgba(255, 255, 255, 0); /* transparent background */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100% !important;
+}

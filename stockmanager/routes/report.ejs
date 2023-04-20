@@ -1,0 +1,62 @@
+<html>
+<head>
+    <style>
+        table{
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,th{
+            border: 1px;
+            text-align: left;
+            padding: 8px;
+        }
+
+        h2 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tool Store<br>1234 Main St.<br>Saint Louis, MO 63123<br></h2>
+<table>
+    <tr>
+        <th>Name:<br> <%= name %><br></th>
+        <th>Email:<br> <%= email %></th>
+        <th>Contact Phone Number:<br> <%= contactNumber %><br></th>
+    </tr>
+    <tr>
+        <th>Address:<br> <%= streetAddress %><br><%= city %>, <%= state %> <%= zipCode %></th>
+        <th>Method of Payment:<br> <%= paymentMethod %></th>
+    </tr>
+</table>
+<h2>Product Details</h2>
+<table>
+    <tr>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Sub Total</th>
+    </tr>
+    <% if(productDetails.length > 0){ %>
+    <% productDetails.forEach(product => { %>
+        <tr>
+            <td><%= product.name %></td>
+            <td><%= product.category %></td>
+            <td><%= product.quantity %></td>
+            <td><span>&#36;</span> <%= product.price %>.00</td>
+            <td><span>&#36;</span> <%= product.total %>.00</td>
+        </tr>
+        <%});%>
+        <%}%>
+</table>
+<h3>Payment Total: $<%= total %>.00</h3>
+<br><br><br><br><br>
+<h3 style="text-align: center;">We appreciate your business. Please visit again.</h3>
+</body>
+
+
+</html>

@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;1,400;1,800&display=swap');
+
+* {
+  box-sizing: border-box;
+  font-family: 'Raleway', sans-serif;
+}
+
+.position-relative {
+	position: relative;
+}
+
+.add-contact {
+	position: absolute;
+    right: 17px;
+    top: 57px;
+}
+
+
+  
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 33.3%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    border-radius: 15px;
+  }
+  
+  
+  .container {
+    padding: 0 16px;
+    background-color: white;
+    border-radius: 15px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: black;
+    font-weight: 800;
+    font-style: bold;
+    text-align: center !important;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+  font-weight: 600;
+  letter-spacing: .25ch;
+    background-color: dodgerblue;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 15px;
+  }
+  
+  .button:hover {
+    color: grayscale($color: #c02929);
+    text-shadow:
+    0 0 42px rgb(141, 27, 18),
+    0 0 82px rgb(168, 24, 24),
+    0 0 92px rgb(180, 20, 20),
+    0 0 102px rgb(190, 33, 33),
+    0 0 151px rgb(233, 7, 7);
+
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
